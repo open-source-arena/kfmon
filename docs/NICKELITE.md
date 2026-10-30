@@ -72,8 +72,10 @@ found the same `/etc/init.d/ota` (SHA256
 removes the archive and reboots normally. This variant's driver returns **1 on
 success, validation failure, shell error, and handled signal**, and performs no
 stage2 work. The nonzero exit is intentional; it is not an installation success
-signal. Errors are printed to stderr. A power failure or forced SIGKILL can still
-interrupt a rootfs update and require manual repair.
+signal. After the manager completes, the driver prints a stage1 receipt before
+the firmware's generic `Update failed.` message and normal reboot. Errors are
+printed to stderr. A power failure or forced SIGKILL can still interrupt a rootfs
+update and require manual repair.
 
 This evidence describes those QEMU images, not a physical reader qualification.
 Firmware 6 installation/runtime compatibility has not been tested. Do not infer

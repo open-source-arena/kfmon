@@ -26,3 +26,4 @@ if [ "$mode" = --install ]; then
 else
     sh "$work/payload/nickelite-manage.sh" --uninstall
 fi
+echo 'Nickelite KFMon stage1 applied; exiting nonzero to select the normal reboot path.' >&2
